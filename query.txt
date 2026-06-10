@@ -1,0 +1,148 @@
+1. Find all movies
+// db.movies.find()
+
+2. Find first movie document
+// db.movies.findOne()
+
+3. Find movies released after 2000
+// db.movies.find({'year': {$gt : 2000}})
+
+4. Find movies released before 1990
+// db.movies.find({'year': {$lt : 1990}})
+
+5. Find movies with runtime greater than 120
+// db.movies.find({'runtime': {$gt : 120}})
+
+6. Find movies with runtime less than 90
+// db.movies.find({'runtime': {$lt : 90}})
+
+7. Find movies with genre Drama
+// db.movies.find({'genres': 'Drama'})
+
+8. Find movies with genre Comedy
+// db.movies.find({'genres': 'Comedy'})
+
+9. Find movies with imdb rating greater than 8
+// db.movies.find({'imdb.rating':{$gt:8}})
+
+10. Count total movies
+// db.movies.find().count()
+
+11. Find comments by a specific user
+// db.comments.findOne()
+// db.comments.find({"name":'Mercedes Tyler'})
+
+12. Find movies from a specific country
+// db.movies.find({'countries':{$eq:'INDIA'}})
+
+13. Find movies in specific language
+// db.movies.find({'languages':{$eq:'English'}})
+
+14. Find theaters in a city
+// db.theaters.find({"location.address.city": "Bloomington"})
+
+15. Find movies released in a specific year
+// db.movies.find({"year":{$eq:2015}},{title:1})
+
+16. Find movies between two years
+//  db.movies.find({year: {$gte: 2012, $lte: 2016}})
+
+
+17. Find movies with runtime between two values
+//  db.movies.find({runtime: {$gte: 10, $lte: 15}})
+
+18. Find movies with rating > X and runtime > Y
+//  db.movies.find({"imdb.rating": {$gt: 8}, runtime: {$gt: 120}})
+
+
+19. Find movies having Drama and Comedy genres
+//  db.movies.find({genres: "Drama", genres: "Comedy"})
+
+
+20. Find movies with missing poster field
+//  db.movies.find({'poster':null})
+
+
+21. Find movies where awards.wins > 5
+//  db.movies.find({'awards.wins':{$gt:5}})
+
+
+22. Return only title and year fields
+//  db.movies.find({},{title:1,year:1})
+
+
+23. Sort movies by year ascending
+//  db.movies.find().limit(5).sort({'year':1})
+
+
+24. Sort movies by year descending
+//  db.movies.find().limit(5).sort({'year':-1})
+
+25. Return top 10 newest movies
+//  db.movies.find().sort({year: -1}).limit(10)
+
+
+26. Return first 20 movies
+//  db.movies.find().limit(20)
+
+
+27. Skip first 20 movies and return next 20
+//  db.movies.find().limit(20).skip(20)
+//  db.movies.find({},{title:1}).limit(20).skip(20)  //return title and id
+
+
+28. Update movie runtime
+//  db.movies.updateOne({"title": 'Regeneration'},{$set:{runtime:150}})
+
+
+29. Update movie title
+//  db.movies.updateOne({"title": 'Regeneration'},{$set:{"title": 'Generator'}})
+
+
+30. Add new field into document
+
+
+31. Increase numeric field using increment
+
+
+32. Remove field from document
+
+
+33. Delete one comment
+
+
+34. Delete multiple comments
+
+
+35. Insert one movie document
+
+
+36. Insert multiple movie documents
+
+
+37. Find movies using regex on title
+
+
+38. Find movies where cast contains actor name
+
+
+39. Find movies with more than one country
+
+
+40. Find movies having at least 3 genres
+
+
+41. Find documents using OR condition
+
+
+42. Find documents using AND condition
+
+
+43. Find movies with specific language and genre
+
+
+44. Add item into array using push
+
+
+45. Remove item from array using pull
+
