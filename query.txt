@@ -100,49 +100,57 @@
 
 
 30. Add new field into document
-
+//  db.movies.updateOne({title: "Mera Naam Joker"}, {$set: {owner: "lala bhai"}})
 
 31. Increase numeric field using increment
-
+//  db.movies.updateOne({title: "Mera Naam Joker"}, {$inc: {runtime: 26}})
 
 32. Remove field from document
+// db.movies.updateOne({title: "Mera Naam Joker"}, {$unset: {owner: "lala bhai"}})
 
 
 33. Delete one comment
+// db.comments.deleteOne({name: 'Mercedes Tyler'})
 
 
 34. Delete multiple comments
+//  db.comments.deleteMany({name: 'Mercedes Tyler'})
 
 
 35. Insert one movie document
+//  db.movies.insertOne({title: "Dhurander", year: 2025, runtime: 175, genres: ["Action", "ture event"], imdb: {rating: 9.2}, awards: {wins: 3, nominations: 6}})
 
 
 36. Insert multiple movie documents
-
+//  db.movies.insertMany([
+  {title: "The Dhurander", year: 2025, runtime: 175, genres: ["agent", "Crime"], imdb: {rating: 9.2}, awards: {wins: 3, nominations: 6}},
+  {title: "The Dhurander: Part II", year: 2026, runtime: 200, genres: ["action", "agent","true"], imdb: {rating: 9.0}, awards: {wins: 6, nominations: 4}}
+])
 
 37. Find movies using regex on title
-
+// db.movies.find({title: /dhurander/i})
 
 38. Find movies where cast contains actor name
-
+//  db.movies.find({cast: "Ranveer Singh"})
 
 39. Find movies with more than one country
-
+//  db.movies.find({$expr: {$gt: [{ $size: "$countries" }, 1]}})
 
 40. Find movies having at least 3 genres
-
+//  db.movies.findOne({genres : {$size : 3}})
 
 41. Find documents using OR condition
-
+//  db.movies.find({$or: [{year: 2022}, {year: 2023}]})
 
 42. Find documents using AND condition
-
+// db.movies.find({$and: [{year: 2022}, {year: 2023}]})
 
 43. Find movies with specific language and genre
-
+//  db.movies.find({languages: "English", genres: "Drama"})
 
 44. Add item into array using push
-
+//  db.movies.updateOne({title: "The Godfather"}, {$push: {genres: "Action"}})
 
 45. Remove item from array using pull
+// db.movies.updateOne({title: "The Godfather"}, {$pull: {genres: "Action"}})
 
